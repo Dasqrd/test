@@ -49,7 +49,7 @@ class TestDistance(unittest.TestCase):
         Test to confirm customer Data list was rightly populated
         """
         self.set_default_values()
-        self.assertEqual(self.loadDataObject.countCustomerData(),3)
+        self.assertEqual(len(self.loadDataObject.customer_data),3)
     
     def test_populateCustomerDataListUnsorted(self):
         """

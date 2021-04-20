@@ -48,7 +48,7 @@ class TestMain(unittest.TestCase):
         """
         self.set_default_values()
         self.testMain.load_and_set_all_sorted_customer_data()
-        self.assertEqual(self.testMain.load_data.countCustomerData(), 3) 
+        self.assertEqual(len(self.testMain.load_data.customer_data), 3) 
     
     def test_customer_data_sorted(self):
         """

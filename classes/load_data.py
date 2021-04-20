@@ -114,10 +114,3 @@ class LoadData:
          sortedList = sorted(self._customer_data, key=lambda customer: customer.user_id, reverse=False)
          self.customer_data = sortedList
      
-     def countCustomerData(self):
-         i = 0
-         for eachCustomer in self.customer_data:
-             i+=1
-         return i
-         
-     
