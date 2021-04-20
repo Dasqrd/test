@@ -1,5 +1,4 @@
 # test
-<<<<<<< HEAD
 Test...
 =======
 To be able to run this project successfuly, you must have the following packages:
@@ -15,5 +14,3 @@ KILOMETRES_IN_MILE =
 OFFICE_LATITUDE= 
 OFFICE_LONGITUDE=
 OFFICE_NAME=
-
->>>>>>> ab639ec54c6b7f77208adfc4c0c905673f1ae593
