@@ -14,3 +14,6 @@ KILOMETRES_IN_MILE =
 OFFICE_LATITUDE= 
 OFFICE_LONGITUDE=
 OFFICE_NAME=
+
+To run the test files, from the root folder run 
+python -m unittest discover -s tests
