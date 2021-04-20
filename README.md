@@ -1,5 +1,4 @@
 # test
-Test...
 To be able to run this project successfuly, you must have the following packages:
 
 1. python-dotenv
