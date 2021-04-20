@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DEGREES_IN_RADIAN = float(os.getenv("DEGREES_IN_RADIAN"))
-MEAN_EARTH_RADIUS_KM = float(os.getenv("MEAN_EARTH_RADIUS_KM"))
-KILOMETRES_IN_MILE = float(os.getenv("KILOMETRES_IN_MILE"))
-
 from .customer import Customer
 
 class Distance:
@@ -21,6 +17,7 @@ class Distance:
         self._longitudes_abs_diff = 0
         self._central_angle_degrees = 0
         self._distance_miles = 0
+        self.setEnvironmentVariables()
 
     # all getter setter and deleter functions for distance_kilometres
      # getter function
@@ -106,13 +103,13 @@ class Distance:
          self._central_angle_degrees = a
      
      def get_DEGREES_IN_RADIAN(self):
-         return DEGREES_IN_RADIAN
+         return self.DEGREES_IN_RADIAN
 
      def get_MEAN_EARTH_RADIUS_KM(self):
-         return MEAN_EARTH_RADIUS_KM
+         return self.MEAN_EARTH_RADIUS_KM
 
      def get_KILOMETRES_IN_MILE(self):
-         return KILOMETRES_IN_MILE
+         return self.KILOMETRES_IN_MILE
 
      def calculate(self):
         """
@@ -127,6 +124,19 @@ class Distance:
             self.calculate_central_angle_degrees()
             self.calculate_distance_km()
             self.calculate_distance_miles()
+    
+     def setEnvironmentVariables(self):
+         """
+          To prevent errors being splattered all around, we handle a case environment variables were not set
+         """
+         try:
+             self.DEGREES_IN_RADIAN = float(os.getenv("DEGREES_IN_RADIAN"))
+             self.MEAN_EARTH_RADIUS_KM = float(os.getenv("MEAN_EARTH_RADIUS_KM"))
+             self.KILOMETRES_IN_MILE = float(os.getenv("KILOMETRES_IN_MILE"))
+         except:
+             self.DEGREES_IN_RADIAN = -1
+             self.MEAN_EARTH_RADIUS_KM = -1
+             self.KILOMETRES_IN_MILE = -1
     
      def calculate_longitude_abs_diff(self):
          """
@@ -149,7 +159,7 @@ class Distance:
         """
         Calculate the central angle degrees variant of the radian
         """
-        self.central_angle_degrees = self.central_angle_radians * DEGREES_IN_RADIAN
+        self.central_angle_degrees = self.central_angle_radians * self.DEGREES_IN_RADIAN
 
      def calculate_distance_km(self):
 
@@ -157,15 +167,15 @@ class Distance:
         Because we are using radians, this is a simple formula multiplying the radius
         by the angle, the actual units used being irrelevant.
         """
-        self.distance_kilometres = MEAN_EARTH_RADIUS_KM * self.central_angle_radians
-        self.distance_miles = self.distance_kilometres / KILOMETRES_IN_MILE 
+        self.distance_kilometres = self.MEAN_EARTH_RADIUS_KM * self.central_angle_radians
+        self.distance_miles = self.distance_kilometres / self.KILOMETRES_IN_MILE 
     
      def calculate_distance_miles(self):
 
         """
         Also the distance in miles is calculated from kilometres.
         """
-        self.distance_miles = self.distance_kilometres / KILOMETRES_IN_MILE 
+        self.distance_miles = self.distance_kilometres / self.KILOMETRES_IN_MILE 
 
 
     

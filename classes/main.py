@@ -18,8 +18,8 @@ class Main:
          self._customer_data=[] #List to hold all sorted customer object for me
          self.dinner_list=[] #List to hold all sorted customer object for me
          self._raw_data = ""
-         self.DISTANCE_CHECK = float(os.getenv("DISTANCE_CHECK"))
          self._controlCustomer = []
+         self.setEnvironmentVariables()
      
      # all getter setter and deleter functions for Customer Data
      # getter function
@@ -48,6 +48,22 @@ class Main:
      @property
      def controlCustomer(self):
          return self._controlCustomer
+
+     def setEnvironmentVariables(self):
+         """
+          To prevent errors being splattered all around, we handle a case environment variables were not set
+         """
+         try:
+             self.DISTANCE_CHECK = float(os.getenv("DISTANCE_CHECK"))
+             self.OFFICE_LATITUDE =  float(os.getenv("OFFICE_LATITUDE"))
+             self.OFFICE_LONGITUDE = float(os.getenv("OFFICE_LONGITUDE"))
+             self.OFFICE_NAME =str(os.getenv("OFFICE_NAME"))
+         except:
+             self.DISTANCE_CHECK = -1
+             self.OFFICE_LATITUDE =  -1000
+             self.OFFICE_LONGITUDE = -1000
+             self.OFFICE_NAME =-1
+
        
      # setter function
      @controlCustomer.setter
@@ -59,9 +75,9 @@ class Main:
             The control customer was defined as the head office since all other varying customers (loaded customers) will be compared to it 
          """
          self.controlCustomer = Customer()
-         self.controlCustomer.latitude =  float(os.getenv("OFFICE_LATITUDE"))
-         self.controlCustomer.longitude = float(os.getenv("OFFICE_LONGITUDE"))
-         self.controlCustomer.name =str(os.getenv("OFFICE_NAME"))
+         self.controlCustomer.latitude =  self.OFFICE_LATITUDE
+         self.controlCustomer.longitude = self.OFFICE_LONGITUDE
+         self.controlCustomer.name = self.OFFICE_NAME
          self.controlCustomer.user_id = -1
          self.controlCustomer.calculate()
          self.distance.control_customer = self.controlCustomer
@@ -72,11 +88,14 @@ class Main:
      def main_function(self):
          self.setOfficeDefaults()
          self.load_and_set_all_sorted_customer_data()
+         if(self.load_data.error):
+            return
          self.findDinnerList()
          self.outputToAFile(self.getOutput())
 
      def byeMessage(self):
-         return "Error while loading "+str(os.getenv("URL")) if(self.load_data.error) else "Result should be in output.txt"
+         message = "No Environment File found" if self.OFFICE_LATITUDE == -1000 or self.OFFICE_LONGITUDE == -1000 else "Error while loading "+str(os.getenv("URL"))
+         return message if(self.load_data.error) else "Result should be in output.txt"
 
     
      def load_and_set_all_sorted_customer_data(self):

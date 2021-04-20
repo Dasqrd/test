@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DEGREES_IN_RADIAN = float(os.getenv("DEGREES_IN_RADIAN"))
-
 
 class Customer:
      def __init__(self):
@@ -18,6 +16,7 @@ class Customer:
           self._latitude_radians = 0
           self._longitude_radians = 0
           self._distance_to_control = 0
+          self.setEnvironmentVariables()
 
     # all getter setter and deleter functions for Distance to Control
      # getter function
@@ -109,7 +108,16 @@ class Customer:
          self._longitude_radians= a
      
      def get_DEGREES_IN_RADIAN(self):
-         return DEGREES_IN_RADIAN
+         return self.DEGREES_IN_RADIAN
+
+     def setEnvironmentVariables(self):
+         """
+          To prevent errors being splattered all around, we handle a case environment variables were not set
+         """
+         try:
+             self.DEGREES_IN_RADIAN = float(os.getenv("DEGREES_IN_RADIAN"))
+         except:
+             self.DEGREES_IN_RADIAN = -1
     
      def calculate(self):
         """
@@ -139,8 +147,8 @@ class Customer:
         """
         Calculate radians from degrees by dividing the values by a constant.
         """
-        self._latitude_radians = self.latitude / DEGREES_IN_RADIAN
-        self._longitude_radians = self.longitude / DEGREES_IN_RADIAN
+        self._latitude_radians = self.latitude / self.DEGREES_IN_RADIAN
+        self._longitude_radians = self.longitude / self.DEGREES_IN_RADIAN
 
      def __str__(self):
          """

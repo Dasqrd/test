@@ -9,18 +9,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = str(os.getenv("URL"))
-
 #Change className to LoadData
  #1 Class to Load the data from the internet
  #2 Class to handle sorting of Customer object 
  #3
 class LoadData:
      def __init__(self):
-          self._url = URL
+          self._url = ""
           self._customer_data=[] #List to hold all customer object for me
           self._raw_data = ""
           self._error = True
+          self.setEnvironmentVariables()
 
     
     # all getter setter and deleter functions for url
@@ -65,10 +64,19 @@ class LoadData:
      @error.setter
      def error(self, a):
          self._error = a
+
+     def setEnvironmentVariables(self):
+         """
+          To prevent errors being splattered all around, we handle a case environment variables were not set
+         """
+         try:
+             self.url = str(os.getenv("URL"))
+         except:
+             self.url = -1
     
      def loadExternalData(self):
          try:
-            self.raw_data = pd.read_json(self._url, lines=True)
+            self.raw_data = pd.read_json(self.url, lines=True)
             self.error = False
          except:
             self.error = True
