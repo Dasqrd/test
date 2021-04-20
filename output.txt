@@ -1,0 +1,113 @@
+---------LIST OF CUSTOMERS INVITED FOR DINNER--------
+-----Start Customer #1 -------
+ User Id: 4
+ User Name: Ian Kehoe
+ Latitude: 53.2451022
+ Longitude: -6.238335
+ Distance to Head Office: 10.57Km
+-----End Customer #1-------
+-----Start Customer #2 -------
+ User Id: 5
+ User Name: Nora Dempsey
+ Latitude: 53.1302756
+ Longitude: -6.2397222
+ Distance to Head Office: 23.29Km
+-----End Customer #2-------
+-----Start Customer #3 -------
+ User Id: 6
+ User Name: Theresa Enright
+ Latitude: 53.1229599
+ Longitude: -6.2705202
+ Distance to Head Office: 24.09Km
+-----End Customer #3-------
+-----Start Customer #4 -------
+ User Id: 8
+ User Name: Eoin Ahearn
+ Latitude: 54.0894797
+ Longitude: -6.18671
+ Distance to Head Office: 83.53Km
+-----End Customer #4-------
+-----Start Customer #5 -------
+ User Id: 11
+ User Name: Richard Finnegan
+ Latitude: 53.008769
+ Longitude: -6.1056711
+ Distance to Head Office: 38.14Km
+-----End Customer #5-------
+-----Start Customer #6 -------
+ User Id: 12
+ User Name: Christina McArdle
+ Latitude: 52.986375
+ Longitude: -6.043701
+ Distance to Head Office: 41.77Km
+-----End Customer #6-------
+-----Start Customer #7 -------
+ User Id: 13
+ User Name: Olive Ahearn
+ Latitude: 53.0
+ Longitude: -7.0
+ Distance to Head Office: 62.23Km
+-----End Customer #7-------
+-----Start Customer #8 -------
+ User Id: 15
+ User Name: Michael Ahearn
+ Latitude: 52.966
+ Longitude: -6.463
+ Distance to Head Office: 43.72Km
+-----End Customer #8-------
+-----Start Customer #9 -------
+ User Id: 17
+ User Name: Patricia Cahill
+ Latitude: 54.180238
+ Longitude: -5.920898
+ Distance to Head Office: 96.08Km
+-----End Customer #9-------
+-----Start Customer #10 -------
+ User Id: 23
+ User Name: Eoin Gallagher
+ Latitude: 54.080556
+ Longitude: -6.361944
+ Distance to Head Office: 82.69Km
+-----End Customer #10-------
+-----Start Customer #11 -------
+ User Id: 24
+ User Name: Rose Enright
+ Latitude: 54.133333
+ Longitude: -6.433333
+ Distance to Head Office: 89.03Km
+-----End Customer #11-------
+-----Start Customer #12 -------
+ User Id: 26
+ User Name: Stephen McArdle
+ Latitude: 53.038056
+ Longitude: -7.653889
+ Distance to Head Office: 98.87Km
+-----End Customer #12-------
+-----Start Customer #13 -------
+ User Id: 29
+ User Name: Oliver Ahearn
+ Latitude: 53.74452
+ Longitude: -7.11167
+ Distance to Head Office: 72.2Km
+-----End Customer #13-------
+-----Start Customer #14 -------
+ User Id: 30
+ User Name: Nick Enright
+ Latitude: 53.761389
+ Longitude: -7.2875
+ Distance to Head Office: 82.64Km
+-----End Customer #14-------
+-----Start Customer #15 -------
+ User Id: 31
+ User Name: Alan Behan
+ Latitude: 53.1489345
+ Longitude: -6.8422408
+ Distance to Head Office: 44.29Km
+-----End Customer #15-------
+-----Start Customer #16 -------
+ User Id: 39
+ User Name: Lisa Ahearn
+ Latitude: 53.0033946
+ Longitude: -6.3877505
+ Distance to Head Office: 38.36Km
+-----End Customer #16-------
