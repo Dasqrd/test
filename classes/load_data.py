@@ -124,4 +124,3 @@ class LoadData:
              return
          sortedList = sorted(self._customer_data, key=lambda customer: customer.user_id, reverse=False)
          self.overwrite_customer_data(sortedList)
-     
