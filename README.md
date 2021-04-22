@@ -9,7 +9,7 @@ To be able to run this project successfuly, you must have the following packages
 The command pip install -r requirements.txt should install these dependencies.
 
 You must also have a .env file which will contain the following environment variables:
-1. URL= A url with json formatted data in the format: {"latitude": "XX.XXXXXX", "user_id": XX, "name": "XXX XXXX", "longitude": "x.xxxxxx"}
+1. URL= A url with json formatted data in the format: {"latitude": "XX.XXXXXX", "user_id": XX, "name": "XXX XXXX", "longitude": "x.xxxxxx"} on separate lines.
 2. DISTANCE_CHECK= The distance you want to check if all data in the url are within e.g 100.00
 3. DEGREES_IN_RADIAN = Constant approximately 57.29577951
 4. MEAN_EARTH_RADIUS_KM = Constant approximately 6371
