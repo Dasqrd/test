@@ -1,10 +1,11 @@
 # test
 Test...
 =======
-To be able to run this project successfuly, you must have the following packages:
+To be able to run this project successfuly, you must have the following packages (contained in requirements.txt generated with pipreqs --force):
 
 1. python-dotenv
 2. Panda
+The command pip install -r requirements.txt should install these dependencies.
 
 You must also have a .env file which will contain the following environment variables:
 1. URL= A url with json formatted data in the format: {"latitude": "XX.XXXXXX", "user_id": XX, "name": "XXX XXXX", "longitude": "x.xxxxxx"}
