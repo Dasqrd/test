@@ -43,6 +43,9 @@ class LoadData:
      @customer_data.setter
      def customer_data(self, a):
          self._customer_data.append(a) 
+     
+     def overwrite_customer_data(self,a):
+          self._customer_data = a
      # all getter setter and deleter functions for raw_data
      # getter function
      @property
@@ -120,5 +123,5 @@ class LoadData:
          if (self.error):
              return
          sortedList = sorted(self._customer_data, key=lambda customer: customer.user_id, reverse=False)
-         self.customer_data = sortedList
+         self.overwrite_customer_data(sortedList)
      
