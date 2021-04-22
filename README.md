@@ -5,6 +5,7 @@ To be able to run this project successfuly, you must have the following packages
 
 1. python-dotenv
 2. Panda
+
 The command pip install -r requirements.txt should install these dependencies.
 
 You must also have a .env file which will contain the following environment variables:
