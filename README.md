@@ -4,16 +4,17 @@ Test...
 To be able to run this project successfuly, you must have the following packages:
 
 1. python-dotenv
+2. Panda
 
 You must also have a .env file which will contain the following environment variables:
-    URL= 
-    DISTANCE_CHECK= 
-    DEGREES_IN_RADIAN = 
-    MEAN_EARTH_RADIUS_KM =  
-    KILOMETRES_IN_MILE =  
-    OFFICE_LATITUDE= 
-    OFFICE_LONGITUDE=
-    OFFICE_NAME=
+    URL= A url with json formatted data in the format: {"latitude": "XX.XXXXXX", "user_id": XX, "name": "XXX XXXX", "longitude": "x.xxxxxx"}
+    DISTANCE_CHECK= The distance you want to check if all data in the url are within e.g 100.00
+    DEGREES_IN_RADIAN = Constant always 57.29577951
+    MEAN_EARTH_RADIUS_KM = Constant always 6371
+    KILOMETRES_IN_MILE =  Constant always 1.60934
+    OFFICE_LATITUDE= THis is the latitude of the control location in the format XX.XXXXX
+    OFFICE_LONGITUDE= THis is the longitude of the control location in the format XX.XXXXX
+    OFFICE_NAME = THis is the name of the office which can be any string e.g. Head Office
 
 To run the test files, from the root folder run 
 python -m unittest discover -s tests
